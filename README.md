@@ -49,5 +49,5 @@ brew install mecab mecab-ipadic
 * Pythonライブラリのインストール
 
 ```shell
-
+poetry add mecab-python3
 ```
