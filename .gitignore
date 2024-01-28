@@ -1,0 +1,19 @@
+# .gitignore file for the project
+
+# MacOS
+.DS_Store
+
+# python
+__pycache__/
+
+# mypy
+.mypy_cache/
+
+# flake8
+.flake8
+
+# pytest
+.pytest_cache/
+
+# black
+.black_cache/
