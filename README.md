@@ -2,6 +2,14 @@
 
 本編とは関係ない部分（環境構築など）をまとめます。
 
+## Mecab
+
+* MeCabとMeCab辞書のインストール
+
+```shell
+brew install mecab mecab-ipadic
+```
+
 ## Python環境
 
 `pyenv + poetry`前提
@@ -36,18 +44,4 @@ poetry run python run-test-mecab.py
 > た	助動詞,*,*,*,特殊・タ,基本形,た,タ,タ
 > 。	記号,句点,*,*,*,*,。,。,。
 > EOS
-```
-
-## MeCabなどのライブラリインストール（Mac前提）
-
-* MeCabとMeCab辞書のインストール
-
-```shell
-brew install mecab mecab-ipadic
-```
-
-* Pythonライブラリのインストール
-
-```shell
-poetry add mecab-python3
 ```
