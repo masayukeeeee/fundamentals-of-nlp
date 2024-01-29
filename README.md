@@ -10,9 +10,27 @@
 brew install mecab mecab-ipadic
 ```
 
+* mecab-ipadic-neologdのインストール
+
+```shell
+cd 
+git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
+cd mecab-ipadic-neologd
+./bin/install-mecab-ipadic-neologd -n -a
+```
+
+* `mecabrc`の辞書変更
+
+`dicdir = /opt/homebrew/lib/mecab/dic/ipadic`の部分を以下のように変更して、利用する辞書を変更する。
+
+```
+; dicdir = /opt/homebrew/lib/mecab/dic/ipadic
+dicdir = /opt/homebrew/lib/mecab/dic/mecab-ipadic-neologd
+```
+
 ## Python環境
 
-`pyenv + poetry`前提
+* `pyenv + poetry`前提
 
 ```shell
 pyenv install 3.11.4
@@ -21,6 +39,13 @@ poetry init
 poetry env use 3.11.4
 poetry add jupyterlab flake8 pytest mypy mecab-python3
 ```
+
+* もし`mecabrc`が`/usr/local/...`にないと言われたら、homebrew経由では`/opt/homebrew/etc/mecabrc`にあるので、`.zshrc`に以下を追記する
+
+```shell
+export MECABRC="/opt/homebrew/etc/mecabrc"
+```
+
 
 `<project-root>/setup/run-test-mecab.py`を実行して以下のような結果が返ってくればOK。
 
